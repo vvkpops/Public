@@ -1,4 +1,4 @@
-callsign	departureicao	alternateicao	departuretime	arrivaltime	eta	arrivalicao
+callsign,departureicao,alternateicao,departuretime,arrivaltime,eta,arrivalicao
 ACA174	CYUL	CYWG	2025-07-12 1:15	2025-07-12 2:33	2025-07-12 2:26	CYYZ
 ACA127	CYXE	CYVR	2025-07-12 2:06	2025-07-12 5:20	2025-07-12 5:12	CYYZ
 ACA916	CYYT	CYYZ	2025-07-12 1:31	2025-07-12 5:18	2025-07-12 5:12	CYVR

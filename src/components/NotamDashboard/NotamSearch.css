@@ -1,0 +1,53 @@
+.notam-search {
+  flex: 1;
+}
+
+.notam-search form {
+  display: flex;
+  position: relative;
+}
+
+.notam-search input[type="text"] {
+  flex: 1;
+  padding: 8px 35px 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  font-size: 0.9rem;
+}
+
+.notam-search input[type="text"]:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 3px rgba(52, 152, 219, 0.3);
+}
+
+.clear-search {
+  position: absolute;
+  right: 80px; /* Position to left of search button */
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.clear-search:hover {
+  color: #333;
+}
+
+.search-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #2980b9;
+}

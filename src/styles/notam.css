@@ -1,0 +1,457 @@
+/* === NOTAM Dashboard Styles === */
+
+/* Global Variables */
+:root {
+  --card-scale: 1;
+}
+
+/* Card Styling */
+.notam-card {
+  background: rgba(30, 41, 59, 0.85);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin-bottom: 1rem;
+  transform: scale(var(--card-scale));
+  transform-origin: top center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.notam-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.notam-card-head {
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.notam-card-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.notam-card-location {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.notam-card-body {
+  padding: 1rem;
+}
+
+.notam-card-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.notam-card-dates {
+  grid-column: span 2;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.notam-card-summary {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.notam-card-text {
+  white-space: pre-line;
+  font-family: monospace;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  max-height: 12rem;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.notam-card-expand {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.notam-card-expand-btn {
+  background: rgba(14, 165, 233, 0.2);
+  color: rgb(186, 230, 253);
+  border: none;
+  padding: 0.25rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+}
+
+.notam-card-expand-btn:hover {
+  background: rgba(14, 165, 233, 0.4);
+}
+
+.notam-card-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.notam-raw-link {
+  background: none;
+  border: none;
+  color: rgb(125, 211, 252);
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.notam-raw-link:hover {
+  color: rgb(186, 230, 253);
+}
+
+/* Card Header Colors */
+.head-rwy .notam-card-head {
+  background: rgb(239, 68, 68);
+  color: white;
+}
+
+.head-twy .notam-card-head {
+  background: rgb(249, 115, 22);
+  color: white;
+}
+
+.head-rsc .notam-card-head {
+  background: rgb(234, 179, 8);
+  color: white;
+}
+
+.head-crfi .notam-card-head {
+  background: rgb(234, 179, 8);
+  color: white;
+}
+
+.head-ils .notam-card-head {
+  background: rgb(59, 130, 246);
+  color: white;
+}
+
+.head-fuel .notam-card-head {
+  background: rgb(16, 185, 129);
+  color: white;
+}
+
+.head-other .notam-card-head {
+  background: rgb(107, 114, 128);
+  color: white;
+}
+
+.head-cancelled .notam-card-head {
+  background: rgb(156, 163, 175);
+  color: white;
+  text-decoration: line-through;
+}
+
+/* ICAO Tag Styling */
+.icao-tag {
+  background: rgba(51, 65, 85, 0.9);
+  color: rgb(186, 230, 253);
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.icao-remove {
+  color: rgb(248, 113, 113);
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.icao-remove:hover {
+  color: rgb(239, 68, 68);
+}
+
+/* Glass Panel Styling */
+.glass {
+  background: rgba(30, 41, 59, 0.75);
+  backdrop-filter: blur(8px);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(51, 65, 85, 0.8);
+}
+
+/* Filter Chips Styling */
+.filter-chip-input {
+  display: none;
+}
+
+.filter-chip {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  opacity: 0.6;
+  background: rgba(51, 65, 85, 0.8);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.filter-chip-input:checked + .filter-chip {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.filter-chip-rwy { background: rgb(239, 68, 68, 0.3); }
+.filter-chip-twy { background: rgb(249, 115, 22, 0.3); }
+.filter-chip-rsc { background: rgb(234, 179, 8, 0.3); }
+.filter-chip-crfi { background: rgb(234, 179, 8, 0.3); }
+.filter-chip-ils { background: rgb(59, 130, 246, 0.3); }
+.filter-chip-fuel { background: rgb(16, 185, 129, 0.3); }
+.filter-chip-other { background: rgb(107, 114, 128, 0.3); }
+.filter-chip-cancelled { background: rgb(156, 163, 175, 0.3); }
+.filter-chip-dom { background: rgb(139, 92, 246, 0.3); }
+.filter-chip-current { background: rgb(20, 184, 166, 0.3); }
+.filter-chip-future { background: rgb(6, 182, 212, 0.3); }
+
+.filter-chip-input:checked + .filter-chip-rwy { background: rgb(239, 68, 68); }
+.filter-chip-input:checked + .filter-chip-twy { background: rgb(249, 115, 22); }
+.filter-chip-input:checked + .filter-chip-rsc { background: rgb(234, 179, 8); }
+.filter-chip-input:checked + .filter-chip-crfi { background: rgb(234, 179, 8); }
+.filter-chip-input:checked + .filter-chip-ils { background: rgb(59, 130, 246); }
+.filter-chip-input:checked + .filter-chip-fuel { background: rgb(16, 185, 129); }
+.filter-chip-input:checked + .filter-chip-other { background: rgb(107, 114, 128); }
+.filter-chip-input:checked + .filter-chip-cancelled { background: rgb(156, 163, 175); }
+.filter-chip-input:checked + .filter-chip-dom { background: rgb(139, 92, 246); }
+.filter-chip-input:checked + .filter-chip-current { background: rgb(20, 184, 166); }
+.filter-chip-input:checked + .filter-chip-future { background: rgb(6, 182, 212); }
+
+/* Card Scale Slider */
+.card-scale-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-scale-slider {
+  width: 100px;
+  accent-color: rgb(14, 165, 233);
+}
+
+.card-scale-value {
+  font-size: 0.8rem;
+  color: rgb(186, 230, 253);
+  width: 2.5rem;
+}
+
+/* ICAO Set Styling */
+.icao-set-item {
+  display: flex;
+  align-items: center;
+  background: rgba(51, 65, 85, 0.8);
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.icao-set-item.active {
+  background: rgba(14, 165, 233, 0.6);
+}
+
+.icao-set-load {
+  padding: 0.25rem 0.75rem;
+  border: none;
+  background: none;
+  color: white;
+  cursor: pointer;
+}
+
+.icao-set-delete {
+  padding: 0.25rem 0.5rem;
+  border: none;
+  background: rgba(0, 0, 0, 0.2);
+  color: rgb(248, 113, 113);
+  cursor: pointer;
+}
+
+.icao-set-delete:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.icao-set-new-btn {
+  padding: 0.25rem 0.75rem;
+  border: none;
+  background: rgba(14, 165, 233, 0.2);
+  color: rgb(186, 230, 253);
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.icao-set-new-btn:hover {
+  background: rgba(14, 165, 233, 0.4);
+}
+
+.icao-set-editor {
+  display: flex;
+  align-items: center;
+  background: rgba(17, 24, 39, 0.8);
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.icao-set-name-input {
+  padding: 0.25rem 0.75rem;
+  border: none;
+  background: none;
+  color: white;
+}
+
+.icao-set-name-input:focus {
+  outline: none;
+}
+
+.icao-set-save {
+  padding: 0.25rem 0.75rem;
+  border: none;
+  background: rgba(14, 165, 233, 0.4);
+  color: white;
+  cursor: pointer;
+}
+
+.icao-set-save:hover {
+  background: rgba(14, 165, 233, 0.6);
+}
+
+/* Notification Styling */
+.notification-bell {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(17, 24, 39, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  color: rgb(186, 230, 253);
+}
+
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: rgb(239, 68, 68);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.notification-modal {
+  position: fixed;
+  top: 4rem;
+  right: 1rem;
+  z-index: 100;
+  background: rgba(17, 24, 39, 0.95);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.notification-modal-header {
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.clear-notifications-btn {
+  background: none;
+  border: none;
+  color: rgb(248, 113, 113);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.notification-list {
+  padding: 0.5rem;
+}
+
+.notification-item {
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.notification-item:hover {
+  background: rgba(51, 65, 85, 0.5);
+}
+
+.notification-item.read {
+  opacity: 0.6;
+}
+
+.notification-message {
+  margin-bottom: 0.25rem;
+}
+
+.notification-time {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.notification-empty {
+  padding: 1rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Back to Top Button */
+#back-to-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(14, 165, 233, 0.8);
+  color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 50;
+}
+
+#back-to-top-btn:hover {
+  background: rgba(14, 165, 233, 1);
+  transform: translateY(-3px);
+}

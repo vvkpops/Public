@@ -1,0 +1,71 @@
+/* NOTAM specific styles */
+.notam-dashboard {
+  width: 100%;
+}
+
+/* Type badges */
+.type-badge {
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: capitalize;
+}
+
+.type-obstacle {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.type-airspace {
+  background-color: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.type-procedure {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+}
+
+.type-navaid {
+  background-color: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+}
+
+.type-airport {
+  background-color: rgba(139, 92, 246, 0.2);
+  color: #8b5cf6;
+}
+
+/* Map marker styles */
+.notam-marker div {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Popup styles */
+.notam-popup .view-details-btn {
+  background: #0891b2;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.notam-popup .view-details-btn:hover {
+  background: #0e7490;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .notam-content {
+    flex-direction: column;
+  }
+  
+  .notam-sidebar {
+    width: 100% !important;
+  }
+}
